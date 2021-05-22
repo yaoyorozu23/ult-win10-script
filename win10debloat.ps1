@@ -44,7 +44,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = New-Object System.Drawing.Point(1050,700)
-$Form.text                       = "Win 10 Debloat"
+$Form.text                       = "Ultimate Win 10 Script"
 $Form.TopMost                    = $false
 
 ###############################################################################
