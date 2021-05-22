@@ -1,5 +1,5 @@
 # Windows 10 Debloater
-![vulkan logo](https://github.com/link-does-mods/win10-debloat/blob/main/Images/Screenshot.png?raw=true)
+![Script Screenshot](https://github.com/link-does-mods/win10-debloat/blob/main/Images/Screenshot.png?raw=true)
 Just run this one command with an elevated powershell terminal, and that's all you need to get started.
 ```
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/link-does-mods/win10-debloat/main/win10debloat.ps1'))
