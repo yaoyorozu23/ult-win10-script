@@ -1,4 +1,4 @@
-# Windows 10 Debloater
+# U.ltimate Windows 10 Script
 ![Script Screenshot](https://github.com/link-does-mods/win10-debloat/blob/main/Images/Screenshot.png?raw=true)
 Just run this one command with an elevated powershell terminal, and that's all you need to get started.
 ```
