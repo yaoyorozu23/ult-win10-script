@@ -1,3 +1,15 @@
+#############################################
+#           _    _____ _________            #
+#          | |  |  _  \  _   _  |           #
+#          | |  | | | | | | | | |           #
+#          | |  | | | | | | | | |           #
+#          | |__| |_| | | | | | |           #
+#          |____|____/|_| |_| |_|           #
+#                                           #
+#   site: https://link-does-mods.github.io/ #
+# github: https://github.com/link-does-mods #
+#############################################
+
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
@@ -26,69 +38,38 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
     }
 }
 
+################################################################################
+# Main Form
+################################################################################
+
 $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = New-Object System.Drawing.Point(1050,700)
 $Form.text                       = "Win 10 Debloat"
 $Form.TopMost                    = $false
 
-$Form1                            = New-Object system.Windows.Forms.Form
-$Form1.ClientSize                 = New-Object System.Drawing.Point(365,400)
-$Form1.text                       = "Install Scripting Tools"
-$Form1.TopMost                    = $false
-
-$Form2                            = New-Object system.Windows.Forms.Form
-$Form2.ClientSize                 = New-Object System.Drawing.Point(365,300)
-$Form2.text                       = "Install VM Software"
-$Form2.TopMost                    = $false
-
-$Form3                            = New-Object system.Windows.Forms.Form
-$Form3.ClientSize                 = New-Object System.Drawing.Point(383,350)
-$Form3.text                       = "Install Media/Gfx Software"
-$Form3.TopMost                    = $false
+###############################################################################
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 156
 $Panel1.width                    = 1032
 $Panel1.location                 = New-Object System.Drawing.Point(9,90)
 
-$Panel1a                          = New-Object system.Windows.Forms.Panel
-$Panel1a.height                   = 550
-$Panel1a.width                    = 1032
-$Panel1a.location                 = New-Object System.Drawing.Point(9,90)
+$Panel2                          = New-Object system.Windows.Forms.Panel
+$Panel2.height                   = 159
+$Panel2.width                    = 588
+$Panel2.location                 = New-Object System.Drawing.Point(9,293)
 
-$Panel2a                          = New-Object system.Windows.Forms.Panel
-$Panel2a.height                   = 550
-$Panel2a.width                    = 1032
-$Panel2a.location                 = New-Object System.Drawing.Point(9,90)
+$Panel3                          = New-Object system.Windows.Forms.Panel
+$Panel3.height                   = 158
+$Panel3.width                    = 440
+$Panel3.location                 = New-Object System.Drawing.Point(601,293)
 
-$Panel3a                          = New-Object system.Windows.Forms.Panel
-$Panel3a.height                   = 550
-$Panel3a.width                    = 1032
-$Panel3a.location                 = New-Object System.Drawing.Point(9,90)
+$Panel4                          = New-Object system.Windows.Forms.Panel
+$Panel4.height                   = 168
+$Panel4.width                    = 340
+$Panel4.location                 = New-Object System.Drawing.Point(9,491)
 
-$Label1a                          = New-Object system.Windows.Forms.Label
-$Label1a.text                     = "Scripting Tools"
-$Label1a.AutoSize                 = $true
-$Label1a.width                    = 25
-$Label1a.height                   = 10
-$Label1a.location                 = New-Object System.Drawing.Point(10,30)
-$Label1a.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
-
-$Label2a                          = New-Object system.Windows.Forms.Label
-$Label2a.text                     = "VM Software"
-$Label2a.AutoSize                 = $true
-$Label2a.width                    = 25
-$Label2a.height                   = 10
-$Label2a.location                 = New-Object System.Drawing.Point(10,30)
-$Label2a.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
-
-$Label3a                          = New-Object system.Windows.Forms.Label
-$Label3a.text                     = "Media/Gfx Software"
-$Label3a.AutoSize                 = $true
-$Label3a.width                    = 25
-$Label3a.height                   = 10
-$Label3a.location                 = New-Object System.Drawing.Point(10,30)
-$Label3a.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
+###############################################################################
 
 $Label1                          = New-Object system.Windows.Forms.Label
 $Label1.text                     = "Program Installation"
@@ -98,167 +79,6 @@ $Label1.height                   = 10
 $Label1.location                 = New-Object System.Drawing.Point(10,30)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
 
-$installchoco                    = New-Object system.Windows.Forms.Button
-$installchoco.text               = "Install Chocolatey"
-$installchoco.width              = 200
-$installchoco.height             = 115
-$installchoco.location           = New-Object System.Drawing.Point(16,19)
-$installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
-
-$alacritty                       = New-Object system.Windows.Forms.Button
-$alacritty.text                  = "Alacritty"
-$alacritty.width                 = 150
-$alacritty.height                = 30
-$alacritty.location              = New-Object System.Drawing.Point(16,19)
-$alacritty.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$vlc                             = New-Object system.Windows.Forms.Button
-$vlc.text                        = "VLC"
-$vlc.width                       = 150
-$vlc.height                      = 30
-$vlc.location                    = New-Object System.Drawing.Point(16,61)
-$vlc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$neovim                          = New-Object system.Windows.Forms.Button
-$neovim.text                     = "Neovim"
-$neovim.width                    = 150
-$neovim.height                   = 30
-$neovim.location                 = New-Object System.Drawing.Point(16,61)
-$neovim.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$scripting                       = New-Object system.Windows.Forms.Button
-$scripting.text                  = "Scripting Tools"
-$scripting.width                 = 150
-$scripting.height                = 30
-$scripting.location              = New-Object System.Drawing.Point(250,19)
-$scripting.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$adobereader                     = New-Object system.Windows.Forms.Button
-$adobereader.text                = "Adobe Reader DC"
-$adobereader.width               = 150
-$adobereader.height              = 30
-$adobereader.location            = New-Object System.Drawing.Point(417,61)
-$adobereader.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$winscp                             = New-Object system.Windows.Forms.Button
-$winscp.text                        = "WinSCP"
-$winscp.width                       = 150
-$winscp.height                      = 30
-$winscp.location                    = New-Object System.Drawing.Point(250,61)
-$winscp.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$atom                            = New-Object system.Windows.Forms.Button
-$atom.text                       = "Atom"
-$atom.width                      = 150
-$atom.height                     = 30
-$atom.location                   = New-Object System.Drawing.Point(16,104)
-$atom.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$emacs                           = New-Object system.Windows.Forms.Button
-$emacs.text                      = "Emacs"
-$emacs.width                     = 150
-$emacs.height                    = 30
-$emacs.location                  = New-Object System.Drawing.Point(183,19)
-$emacs.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$vmware                          = New-Object system.Windows.Forms.Button
-$vmware.text                     = "VMWare Player"
-$vmware.width                    = 150
-$vmware.height                   = 30
-$vmware.location                 = New-Object System.Drawing.Point(183,19)
-$vmware.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$inkscape                        = New-Object system.Windows.Forms.Button
-$inkscape.text                   = "Inkscape"
-$inkscape.width                  = 150
-$inkscape.height                 = 30
-$inkscape.location               = New-Object System.Drawing.Point(183,19)
-$inkscape.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$github                          = New-Object system.Windows.Forms.Button
-$github.text                     = "Github Desktop"
-$github.width                    = 150
-$github.height                   = 30
-$github.location                 = New-Object System.Drawing.Point(183,61)
-$github.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$spotify                         = New-Object system.Windows.Forms.Button
-$spotify.text                    = "Spotify"
-$spotify.width                   = 150
-$spotify.height                  = 30
-$spotify.location                = New-Object System.Drawing.Point(183,61)
-$spotify.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$back                            = New-Object system.Windows.Forms.Button
-$back.text                       = "Back"
-$back.width                      = 150
-$back.height                     = 30
-$back.location                   = New-Object System.Drawing.Point(95,147)
-$back.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$back1                           = New-Object system.Windows.Forms.Button
-$back1.text                      = "Back"
-$back1.width                     = 150
-$back1.height                    = 30
-$back1.location                  = New-Object System.Drawing.Point(95,62)
-$back1.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$back2                           = New-Object system.Windows.Forms.Button
-$back2.text                      = "Back"
-$back2.width                     = 150
-$back2.height                    = 30
-$back2.location                  = New-Object System.Drawing.Point(95,103)
-$back2.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$vbox                            = New-Object system.Windows.Forms.Button
-$vbox.text                       = "Virtualbox"
-$vbox.width                      = 150
-$vbox.height                     = 30
-$vbox.location                   = New-Object System.Drawing.Point(16,19)
-$vbox.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$gimp                            = New-Object system.Windows.Forms.Button
-$gimp.text                       = "Gimp"
-$gimp.width                      = 150
-$gimp.height                     = 30
-$gimp.location                   = New-Object System.Drawing.Point(16,19)
-$gimp.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$7zip                            = New-Object system.Windows.Forms.Button
-$7zip.text                       = "7-Zip"
-$7zip.width                      = 150
-$7zip.height                     = 30
-$7zip.location                   = New-Object System.Drawing.Point(584,104)
-$7zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$vms                             = New-Object system.Windows.Forms.Button
-$vms.text                        = "VM Software"
-$vms.width                       = 150
-$vms.height                      = 30
-$vms.location                    = New-Object System.Drawing.Point(417,19)
-$vms.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$7zip                             = New-Object system.Windows.Forms.Button
-$7zip.text                        = "7-Zip"
-$7zip.width                       = 150
-$7zip.height                      = 30
-$7zip.location                    = New-Object System.Drawing.Point(417,61)
-$7zip.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$media                            = New-Object system.Windows.Forms.Button
-$media.text                       = "Media/Gfx"
-$media.width                      = 150
-$media.height                     = 30
-$media.location                   = New-Object System.Drawing.Point(584,19)
-$media.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$adobereader                      = New-Object system.Windows.Forms.Button
-$adobereader.text                 = "Adobe Reader DC"
-$adobereader.width                = 150
-$adobereader.height               = 30
-$adobereader.location             = New-Object System.Drawing.Point(751,19)
-$adobereader.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
 $Label2                          = New-Object system.Windows.Forms.Label
 $Label2.text                     = "(Chocolatey Required for installs)"
 $Label2.AutoSize                 = $true
@@ -266,11 +86,6 @@ $Label2.width                    = 25
 $Label2.height                   = 10
 $Label2.location                 = New-Object System.Drawing.Point(478,3)
 $Label2.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
-
-$Panel2                          = New-Object system.Windows.Forms.Panel
-$Panel2.height                   = 159
-$Panel2.width                    = 588
-$Panel2.location                 = New-Object System.Drawing.Point(9,293)
 
 $Label3                          = New-Object system.Windows.Forms.Label
 $Label3.text                     = "System Tweaks"
@@ -280,67 +95,6 @@ $Label3.height                   = 25
 $Label3.location                 = New-Object System.Drawing.Point(195,251)
 $Label3.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
 
-$essentialtweaks                 = New-Object system.Windows.Forms.Button
-$essentialtweaks.text            = "Essential Tweaks"
-$essentialtweaks.width           = 200
-$essentialtweaks.height          = 115
-$essentialtweaks.location        = New-Object System.Drawing.Point(24,34)
-$essentialtweaks.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
-
-$backgroundapps                  = New-Object system.Windows.Forms.Button
-$backgroundapps.text             = "Background Apps"
-$backgroundapps.width            = 150
-$backgroundapps.height           = 30
-$backgroundapps.location         = New-Object System.Drawing.Point(251,45)
-$backgroundapps.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$cortana                         = New-Object system.Windows.Forms.Button
-$cortana.text                    = "Cortana"
-$cortana.width                   = 150
-$cortana.height                  = 30
-$cortana.location                = New-Object System.Drawing.Point(251,82)
-$cortana.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$windowssearch                   = New-Object system.Windows.Forms.Button
-$windowssearch.text              = "Windows Search"
-$windowssearch.width             = 150
-$windowssearch.height            = 30
-$windowssearch.location          = New-Object System.Drawing.Point(417,119)
-$windowssearch.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$actioncenter                    = New-Object system.Windows.Forms.Button
-$actioncenter.text               = "Action Center"
-$actioncenter.width              = 150
-$actioncenter.height             = 30
-$actioncenter.location           = New-Object System.Drawing.Point(251,9)
-$actioncenter.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$darkmode                        = New-Object system.Windows.Forms.Button
-$darkmode.text                   = "Dark Mode"
-$darkmode.width                  = 150
-$darkmode.height                 = 30
-$darkmode.location               = New-Object System.Drawing.Point(417,7)
-$darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$visualfx                        = New-Object system.Windows.Forms.Button
-$visualfx.text                   = "Visual FX"
-$visualfx.width                  = 150
-$visualfx.height                 = 30
-$visualfx.location               = New-Object System.Drawing.Point(417,82)
-$visualfx.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$onedrive                        = New-Object system.Windows.Forms.Button
-$onedrive.text                   = "OneDrive"
-$onedrive.width                  = 150
-$onedrive.height                 = 30
-$onedrive.location               = New-Object System.Drawing.Point(251,119)
-$onedrive.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$Panel3                          = New-Object system.Windows.Forms.Panel
-$Panel3.height                   = 158
-$Panel3.width                    = 440
-$Panel3.location                 = New-Object System.Drawing.Point(601,293)
-
 $Label4                          = New-Object system.Windows.Forms.Label
 $Label4.text                     = "Security"
 $Label4.AutoSize                 = $true
@@ -348,20 +102,6 @@ $Label4.width                    = 117
 $Label4.height                   = 25
 $Label4.location                 = New-Object System.Drawing.Point(761,252)
 $Label4.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
-
-$securitylow                     = New-Object system.Windows.Forms.Button
-$securitylow.text                = "Low"
-$securitylow.width               = 150
-$securitylow.height              = 30
-$securitylow.location            = New-Object System.Drawing.Point(36,119)
-$securitylow.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',15,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
-
-$securityhigh                    = New-Object system.Windows.Forms.Button
-$securityhigh.text               = "High"
-$securityhigh.width              = 150
-$securityhigh.height             = 30
-$securityhigh.location           = New-Object System.Drawing.Point(244,119)
-$securityhigh.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',15,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
 $Label5                          = New-Object system.Windows.Forms.Label
 $Label5.text                     = ""
@@ -443,25 +183,6 @@ $Label15.height                  = 10
 $Label15.location                = New-Object System.Drawing.Point(58,459)
 $Label15.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
 
-$Panel4                          = New-Object system.Windows.Forms.Panel
-$Panel4.height                   = 168
-$Panel4.width                    = 340
-$Panel4.location                 = New-Object System.Drawing.Point(9,491)
-
-$defaultwindowsupdate            = New-Object system.Windows.Forms.Button
-$defaultwindowsupdate.text       = "Default Settings"
-$defaultwindowsupdate.width      = 300
-$defaultwindowsupdate.height     = 30
-$defaultwindowsupdate.location   = New-Object System.Drawing.Point(20,13)
-$defaultwindowsupdate.Font       = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
-
-$securitywindowsupdate           = New-Object system.Windows.Forms.Button
-$securitywindowsupdate.text      = "Security Updates Only"
-$securitywindowsupdate.width     = 300
-$securitywindowsupdate.height    = 30
-$securitywindowsupdate.location  = New-Object System.Drawing.Point(20,119)
-$securitywindowsupdate.Font      = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
-
 $Label16                         = New-Object system.Windows.Forms.Label
 $Label16.text                    = "I recommend doing security updates only."
 $Label16.AutoSize                = $true
@@ -526,33 +247,105 @@ $Label23.height                  = 10
 $Label23.location                = New-Object System.Drawing.Point(390,529)
 $Label23.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$PictureBox1                     = New-Object system.Windows.Forms.PictureBox
-$PictureBox1.width               = 412
-$PictureBox1.height              = 125
-$PictureBox1.location            = New-Object System.Drawing.Point(449,541)
-$PictureBox1.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Triforce.png?raw=true"
-$PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+###############################################################################
 
-$PictureBox1a                     = New-Object system.Windows.Forms.PictureBox
-$PictureBox1a.width               = 300
-$PictureBox1a.height              = 125
-$PictureBox1a.location            = New-Object System.Drawing.Point(19,170)
-$PictureBox1a.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Guardian.png?raw=true"
-$PictureBox1a.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+$installchoco                    = New-Object system.Windows.Forms.Button
+$installchoco.text               = "Install Chocolatey"
+$installchoco.width              = 200
+$installchoco.height             = 115
+$installchoco.location           = New-Object System.Drawing.Point(16,19)
+$installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$PictureBox1b                     = New-Object system.Windows.Forms.PictureBox
-$PictureBox1b.width               = 300
-$PictureBox1b.height              = 125
-$PictureBox1b.location            = New-Object System.Drawing.Point(19,80)
-$PictureBox1b.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Purah.png?raw=true"
-$PictureBox1b.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+$scripting                       = New-Object system.Windows.Forms.Button
+$scripting.text                  = "Scripting Tools"
+$scripting.width                 = 150
+$scripting.height                = 30
+$scripting.location              = New-Object System.Drawing.Point(250,19)
+$scripting.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$PictureBox1c                     = New-Object system.Windows.Forms.PictureBox
-$PictureBox1c.width               = 300
-$PictureBox1c.height              = 125
-$PictureBox1c.location            = New-Object System.Drawing.Point(19,120)
-$PictureBox1c.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Korok.png?raw=true"
-$PictureBox1c.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+$media                            = New-Object system.Windows.Forms.Button
+$media.text                       = "Media/Gfx"
+$media.width                      = 150
+$media.height                     = 30
+$media.location                   = New-Object System.Drawing.Point(584,19)
+$media.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$emulators                       = New-Object system.Windows.Forms.Button
+$emulators.text                  = "Emulators"
+$emulators.width                 = 150
+$emulators.height                = 30
+$emulators.location              = New-Object System.Drawing.Point(751,19)
+$emulators.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$winscp                          = New-Object system.Windows.Forms.Button
+$winscp.text                     = "WinSCP"
+$winscp.width                    = 150
+$winscp.height                   = 30
+$winscp.location                 = New-Object System.Drawing.Point(250,61)
+$winscp.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$7zip                            = New-Object system.Windows.Forms.Button
+$7zip.text                       = "7-Zip"
+$7zip.width                      = 150
+$7zip.height                     = 30
+$7zip.location                   = New-Object System.Drawing.Point(417,61)
+$7zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$adobereader                     = New-Object system.Windows.Forms.Button
+$adobereader.text                = "Adobe Reader DC"
+$adobereader.width               = 150
+$adobereader.height              = 30
+$adobereader.location            = New-Object System.Drawing.Point(584,61)
+$adobereader.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$vms                             = New-Object system.Windows.Forms.Button
+$vms.text                        = "VM Software"
+$vms.width                       = 150
+$vms.height                      = 30
+$vms.location                    = New-Object System.Drawing.Point(417,19)
+$vms.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$essentialtweaks                 = New-Object system.Windows.Forms.Button
+$essentialtweaks.text            = "Essential Tweaks"
+$essentialtweaks.width           = 200
+$essentialtweaks.height          = 115
+$essentialtweaks.location        = New-Object System.Drawing.Point(24,34)
+$essentialtweaks.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
+
+$backgroundapps                  = New-Object system.Windows.Forms.Button
+$backgroundapps.text             = "Background Apps"
+$backgroundapps.width            = 150
+$backgroundapps.height           = 30
+$backgroundapps.location         = New-Object System.Drawing.Point(251,45)
+$backgroundapps.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$cortana                         = New-Object system.Windows.Forms.Button
+$cortana.text                    = "Cortana"
+$cortana.width                   = 150
+$cortana.height                  = 30
+$cortana.location                = New-Object System.Drawing.Point(251,82)
+$cortana.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$windowssearch                   = New-Object system.Windows.Forms.Button
+$windowssearch.text              = "Windows Search"
+$windowssearch.width             = 150
+$windowssearch.height            = 30
+$windowssearch.location          = New-Object System.Drawing.Point(417,119)
+$windowssearch.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$actioncenter                    = New-Object system.Windows.Forms.Button
+$actioncenter.text               = "Action Center"
+$actioncenter.width              = 150
+$actioncenter.height             = 30
+$actioncenter.location           = New-Object System.Drawing.Point(251,9)
+$actioncenter.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$darkmode                        = New-Object system.Windows.Forms.Button
+$darkmode.text                   = "Dark Mode"
+$darkmode.width                  = 150
+$darkmode.height                 = 30
+$darkmode.location               = New-Object System.Drawing.Point(417,7)
+$darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $lightmode                       = New-Object system.Windows.Forms.Button
 $lightmode.text                  = "Light Mode"
@@ -561,18 +354,364 @@ $lightmode.height                = 30
 $lightmode.location              = New-Object System.Drawing.Point(417,45)
 $lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
+$visualfx                        = New-Object system.Windows.Forms.Button
+$visualfx.text                   = "Visual FX"
+$visualfx.width                  = 150
+$visualfx.height                 = 30
+$visualfx.location               = New-Object System.Drawing.Point(417,82)
+$visualfx.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$onedrive                        = New-Object system.Windows.Forms.Button
+$onedrive.text                   = "OneDrive"
+$onedrive.width                  = 150
+$onedrive.height                 = 30
+$onedrive.location               = New-Object System.Drawing.Point(251,119)
+$onedrive.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$securitylow                     = New-Object system.Windows.Forms.Button
+$securitylow.text                = "Low"
+$securitylow.width               = 150
+$securitylow.height              = 30
+$securitylow.location            = New-Object System.Drawing.Point(36,119)
+$securitylow.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',15,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
+
+$securityhigh                    = New-Object system.Windows.Forms.Button
+$securityhigh.text               = "High"
+$securityhigh.width              = 150
+$securityhigh.height             = 30
+$securityhigh.location           = New-Object System.Drawing.Point(244,119)
+$securityhigh.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',15,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
+
+$defaultwindowsupdate            = New-Object system.Windows.Forms.Button
+$defaultwindowsupdate.text       = "Default Settings"
+$defaultwindowsupdate.width      = 300
+$defaultwindowsupdate.height     = 30
+$defaultwindowsupdate.location   = New-Object System.Drawing.Point(20,13)
+$defaultwindowsupdate.Font       = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
+
+$securitywindowsupdate           = New-Object system.Windows.Forms.Button
+$securitywindowsupdate.text      = "Security Updates Only"
+$securitywindowsupdate.width     = 300
+$securitywindowsupdate.height    = 30
+$securitywindowsupdate.location  = New-Object System.Drawing.Point(20,119)
+$securitywindowsupdate.Font      = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
+
+###############################################################################
+
+$PictureBox1                     = New-Object system.Windows.Forms.PictureBox
+$PictureBox1.width               = 412
+$PictureBox1.height              = 125
+$PictureBox1.location            = New-Object System.Drawing.Point(449,541)
+$PictureBox1.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Triforce.png?raw=true"
+$PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+
+################################################################################
+# Scripting Form
+################################################################################
+
+$Form1                            = New-Object system.Windows.Forms.Form
+$Form1.ClientSize                 = New-Object System.Drawing.Point(365,400)
+$Form1.text                       = "Install Scripting Tools"
+$Form1.TopMost                    = $false
+
+###############################################################################
+
+$Panel1a                          = New-Object system.Windows.Forms.Panel
+$Panel1a.height                   = 550
+$Panel1a.width                    = 1032
+$Panel1a.location                 = New-Object System.Drawing.Point(9,90)
+
+###############################################################################
+
+$Label1a                          = New-Object system.Windows.Forms.Label
+$Label1a.text                     = "Scripting Tools"
+$Label1a.AutoSize                 = $true
+$Label1a.width                    = 25
+$Label1a.height                   = 10
+$Label1a.location                 = New-Object System.Drawing.Point(10,30)
+$Label1a.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
+
+###############################################################################
+
+$alacritty                       = New-Object system.Windows.Forms.Button
+$alacritty.text                  = "Alacritty"
+$alacritty.width                 = 150
+$alacritty.height                = 30
+$alacritty.location              = New-Object System.Drawing.Point(16,19)
+$alacritty.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$neovim                          = New-Object system.Windows.Forms.Button
+$neovim.text                     = "Neovim"
+$neovim.width                    = 150
+$neovim.height                   = 30
+$neovim.location                 = New-Object System.Drawing.Point(16,61)
+$neovim.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$atom                            = New-Object system.Windows.Forms.Button
+$atom.text                       = "Atom"
+$atom.width                      = 150
+$atom.height                     = 30
+$atom.location                   = New-Object System.Drawing.Point(16,104)
+$atom.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$emacs                           = New-Object system.Windows.Forms.Button
+$emacs.text                      = "Emacs"
+$emacs.width                     = 150
+$emacs.height                    = 30
+$emacs.location                  = New-Object System.Drawing.Point(183,19)
+$emacs.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$github                          = New-Object system.Windows.Forms.Button
+$github.text                     = "Github Desktop"
+$github.width                    = 150
+$github.height                   = 30
+$github.location                 = New-Object System.Drawing.Point(183,61)
+$github.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$back                            = New-Object system.Windows.Forms.Button
+$back.text                       = "Back"
+$back.width                      = 150
+$back.height                     = 30
+$back.location                   = New-Object System.Drawing.Point(95,147)
+$back.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+###############################################################################
+
+$PictureBox1a                     = New-Object system.Windows.Forms.PictureBox
+$PictureBox1a.width               = 300
+$PictureBox1a.height              = 125
+$PictureBox1a.location            = New-Object System.Drawing.Point(19,170)
+$PictureBox1a.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Guardian.png?raw=true"
+$PictureBox1a.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+
+################################################################################
+# Virtual Machine Form
+################################################################################
+
+$Form2                            = New-Object system.Windows.Forms.Form
+$Form2.ClientSize                 = New-Object System.Drawing.Point(365,300)
+$Form2.text                       = "Install VM Software"
+$Form2.TopMost                    = $false
+
+###############################################################################
+
+$Panel2a                          = New-Object system.Windows.Forms.Panel
+$Panel2a.height                   = 550
+$Panel2a.width                    = 1032
+$Panel2a.location                 = New-Object System.Drawing.Point(9,90)
+
+###############################################################################
+
+$Label2a                          = New-Object system.Windows.Forms.Label
+$Label2a.text                     = "VM Software"
+$Label2a.AutoSize                 = $true
+$Label2a.width                    = 25
+$Label2a.height                   = 10
+$Label2a.location                 = New-Object System.Drawing.Point(10,30)
+$Label2a.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
+
+###############################################################################
+
+$vbox                            = New-Object system.Windows.Forms.Button
+$vbox.text                       = "Virtualbox"
+$vbox.width                      = 150
+$vbox.height                     = 30
+$vbox.location                   = New-Object System.Drawing.Point(16,19)
+$vbox.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$vmware                          = New-Object system.Windows.Forms.Button
+$vmware.text                     = "VMWare Player"
+$vmware.width                    = 150
+$vmware.height                   = 30
+$vmware.location                 = New-Object System.Drawing.Point(183,19)
+$vmware.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$back1                           = New-Object system.Windows.Forms.Button
+$back1.text                      = "Back"
+$back1.width                     = 150
+$back1.height                    = 30
+$back1.location                  = New-Object System.Drawing.Point(95,62)
+$back1.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+################################################################################
+
+$PictureBox1b                     = New-Object system.Windows.Forms.PictureBox
+$PictureBox1b.width               = 300
+$PictureBox1b.height              = 125
+$PictureBox1b.location            = New-Object System.Drawing.Point(19,80)
+$PictureBox1b.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Purah.png?raw=true"
+$PictureBox1b.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+
+################################################################################
+# Media/gfx Form
+################################################################################
+
+$Form3                            = New-Object system.Windows.Forms.Form
+$Form3.ClientSize                 = New-Object System.Drawing.Point(383,350)
+$Form3.text                       = "Install Media/Gfx Software"
+$Form3.TopMost                    = $false
+
+###############################################################################
+
+$Panel3a                          = New-Object system.Windows.Forms.Panel
+$Panel3a.height                   = 550
+$Panel3a.width                    = 1032
+$Panel3a.location                 = New-Object System.Drawing.Point(9,90)
+
+###############################################################################
+
+$Label3a                          = New-Object system.Windows.Forms.Label
+$Label3a.text                     = "Media/Gfx Software"
+$Label3a.AutoSize                 = $true
+$Label3a.width                    = 25
+$Label3a.height                   = 10
+$Label3a.location                 = New-Object System.Drawing.Point(10,30)
+$Label3a.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
+
+###############################################################################
+
+$gimp                            = New-Object system.Windows.Forms.Button
+$gimp.text                       = "Gimp"
+$gimp.width                      = 150
+$gimp.height                     = 30
+$gimp.location                   = New-Object System.Drawing.Point(16,19)
+$gimp.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$inkscape                        = New-Object system.Windows.Forms.Button
+$inkscape.text                   = "Inkscape"
+$inkscape.width                  = 150
+$inkscape.height                 = 30
+$inkscape.location               = New-Object System.Drawing.Point(183,19)
+$inkscape.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$vlc                             = New-Object system.Windows.Forms.Button
+$vlc.text                        = "VLC"
+$vlc.width                       = 150
+$vlc.height                      = 30
+$vlc.location                    = New-Object System.Drawing.Point(16,61)
+$vlc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$spotify                         = New-Object system.Windows.Forms.Button
+$spotify.text                    = "Spotify"
+$spotify.width                   = 150
+$spotify.height                  = 30
+$spotify.location                = New-Object System.Drawing.Point(183,61)
+$spotify.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$back2                           = New-Object system.Windows.Forms.Button
+$back2.text                      = "Back"
+$back2.width                     = 150
+$back2.height                    = 30
+$back2.location                  = New-Object System.Drawing.Point(95,103)
+$back2.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+###############################################################################
+
+$PictureBox1c                     = New-Object system.Windows.Forms.PictureBox
+$PictureBox1c.width               = 300
+$PictureBox1c.height              = 125
+$PictureBox1c.location            = New-Object System.Drawing.Point(19,120)
+$PictureBox1c.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Korok.png?raw=true"
+$PictureBox1c.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+
+################################################################################
+# Emulator Form
+################################################################################
+
+$Form4                            = New-Object system.Windows.Forms.Form
+$Form4.ClientSize                 = New-Object System.Drawing.Point(365,350)
+$Form4.text                       = "Install Emulators"
+$Form4.TopMost                    = $false
+
+###############################################################################
+
+$Panel4a                          = New-Object system.Windows.Forms.Panel
+$Panel4a.height                   = 550
+$Panel4a.width                    = 1032
+$Panel4a.location                 = New-Object System.Drawing.Point(9,90)
+
+###############################################################################
+
+$Label4a                          = New-Object system.Windows.Forms.Label
+$Label4a.text                     = "Emulators"
+$Label4a.AutoSize                 = $true
+$Label4a.width                    = 25
+$Label4a.height                   = 10
+$Label4a.location                 = New-Object System.Drawing.Point(10,30)
+$Label4a.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
+
+###############################################################################
+
+$dolphin                          = New-Object system.Windows.Forms.Button
+$dolphin.text                     = "Dolphin"
+$dolphin.width                    = 150
+$dolphin.height                   = 30
+$dolphin.location                 = New-Object System.Drawing.Point(16,19)
+$dolphin.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$pcsx2                            = New-Object system.Windows.Forms.Button
+$pcsx2.text                       = "PCSX2"
+$pcsx2.width                      = 150
+$pcsx2.height                     = 30
+$pcsx2.location                   = New-Object System.Drawing.Point(183,19)
+$pcsx2.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$retroarch                        = New-Object system.Windows.Forms.Button
+$retroarch.text                   = "Retroarch"
+$retroarch.width                  = 150
+$retroarch.height                 = 30
+$retroarch.location               = New-Object System.Drawing.Point(16,61)
+$retroarch.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$back3                            = New-Object system.Windows.Forms.Button
+$back3.text                       = "Back"
+$back3.width                      = 150
+$back3.height                     = 30
+$back3.location                   = New-Object System.Drawing.Point(95,103)
+$back3.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+###############################################################################
+
+$PictureBox1d                     = New-Object system.Windows.Forms.PictureBox
+$PictureBox1d.width               = 300
+$PictureBox1d.height              = 125
+$PictureBox1d.location            = New-Object System.Drawing.Point(19,120)
+$PictureBox1d.imageLocation       = "https://github.com/link-does-mods/win10-debloat/blob/main/Images/Urbosa.png?raw=true"
+$PictureBox1d.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+
+###############################################################################
+# Draw everything in their specific windows
+###############################################################################
+
 $Form.controls.AddRange(@($Panel1,$Label1,$Panel2,$Label3,$Panel3,$Label4,$Label15,$Panel4,$Label20,$Label21,$Label23,$PictureBox1))
-$Form1.controls.AddRange(@($Panel1a,$Label1a))
-$Form2.controls.AddRange(@($Panel2a,$Label2a))
-$Form3.controls.AddRange(@($Panel3a,$Label3a))
-$Panel1.controls.AddRange(@($installchoco,$scripting,$vms,$7zip,$neovim1,$adobereader,$atom1,$media,$gimp1,$vlc1,$winscp,$github1,$Label2))
-$Panel1a.controls.AddRange(@($alacritty,$neovim,$atom,$emacs,$github,$back,$PictureBox1a))
-$Panel2a.controls.AddRange(@($vbox,$vmware,$back1,$PictureBox1b))
-$Panel3a.controls.AddRange(@($gimp,$inkscape,$vlc,$spotify,$back2,$PictureBox1c))
+$Panel1.controls.AddRange(@($installchoco,$scripting,$vms,$7zip,$neovim1,$adobereader,$atom1,$media,$gimp1,$vlc1,$winscp,$github1,$Label2,$emulators))
 $Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$windowssearch,$actioncenter,$darkmode,$visualfx,$onedrive,$Label22,$lightmode))
 $Panel3.controls.AddRange(@($securitylow,$securityhigh,$Label5,$Label6,$Label7,$Label8,$Label9,$Label10,$Label11,$Label12,$Label13))
 $Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
 
+###############################################################################
+
+$Form1.controls.AddRange(@($Panel1a,$Label1a))
+$Panel1a.controls.AddRange(@($alacritty,$neovim,$atom,$emacs,$github,$back,$PictureBox1a))
+
+###############################################################################
+
+$Form2.controls.AddRange(@($Panel2a,$Label2a))
+$Panel2a.controls.AddRange(@($vbox,$vmware,$back1,$PictureBox1b))
+
+###############################################################################
+
+$Form3.controls.AddRange(@($Panel3a,$Label3a))
+$Panel3a.controls.AddRange(@($gimp,$inkscape,$vlc,$spotify,$back2,$PictureBox1c))
+
+###############################################################################
+
+$Form4.controls.AddRange(@($Panel4a,$Label4a))
+$Panel4a.controls.AddRange(@($dolphin,$pcsx2,$retroarch,$back3,$PictureBox1d))
+
+###############################################################################
+# Button actions
+###############################################################################
 
 $installchoco.Add_Click({
     Write-Host "Installing Chocolatey"
@@ -593,76 +732,14 @@ $media.Add_Click({
     [void]$Form3.ShowDialog()
 })
 
-$back.Add_Click({
-    [void]$Form1.Close()
+$emulators.Add_Click({
+    [void]$Form4.ShowDialog()
 })
 
-$back1.Add_Click({
-    [void]$Form2.Close()
-})
-
-$back2.Add_Click({
-    [void]$Form3.Close()
-})
-
-$spotify.Add_Click({
-    Write-Host "Installing Spotify"
-    choco install spotify -y
-    Write-Host "Installed Spotify"
-})
-
-$vbox.Add_Click({
-    Write-Host "Installing Virtualbox"
-    choco install virtualbox -y
-    Write-Host "Installed Virtualbox"
-})
-
-$inkscape.Add_Click({
-    Write-Host "Installing Inkscape"
-    choco install inkscape -y
-    Write-Host "Installed Inkscape"
-})
-
-$vmware.Add_Click({
-    Write-Host "Installing VMWare Player"
-    choco install vmware-workstation-player -y
-    Write-Host "Installed VMWare Player"
-})
-
-$alacritty.Add_Click({
-    Write-Host "Installing Alacritty"
-    choco install alacritty -y
-    Write-Host "Installed Alacritty"
-})
-
-$neovim.Add_Click({
-    Write-Host "Installing neovim"
-    choco install neovim -y
-    Write-Host "Installed neovim"
-})
-
-$adobereader.Add_Click({
-    Write-Host "Installing Adobe Reader DC"
-    choco install adobereader -y
-    Write-Host "Installed Adobe Reader DC"
-})
-
-$atom.Add_Click({
-    Write-Host "Installing Atom"
-    choco install atom -y
-    Write-Host "Installed Atom"
-})
-
-$vlc.Add_Click({
-    Write-Host "Installing VLC Media Player"
-    choco install vlc -y
-    Write-Host "Installed VLC Media Player"
-})
-
-$gimp.Add_Click({
-    Write-Host "Installing Gimp"
-    choco install gimp -y
-    Write-Host "Installed Gimp"
+$winscp.Add_Click({
+    Write-Host "Installing WinSCP"
+    choco install winscp -y
+    Write-Host "Installed WinSCP"
 })
 
 $7zip.Add_Click({
@@ -671,16 +748,10 @@ $7zip.Add_Click({
     Write-Host "Installed 7-Zip Compression Tool"
 })
 
-$github.Add_Click({
-    Write-Host "Installing Github Desktop"
-    choco install github-desktop -y
-    Write-Host "Installed Github Desktop"
-})
-
-$winscp.Add_Click({
-    Write-Host "Installing WinSCP"
-    choco install winscp -y
-    Write-Host "Installed WinSCP"
+$adobereader.Add_Click({
+    Write-Host "Installing Adobe Reader DC"
+    choco install adobereader -y
+    Write-Host "Installed Adobe Reader DC"
 })
 
 $essentialtweaks.Add_Click({
@@ -1164,5 +1235,117 @@ $lightmode.Add_Click({
     Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme
     Write-Host "Switched Back to Light Mode"
 })
+
+###############################################################################
+
+$alacritty.Add_Click({
+    Write-Host "Installing Alacritty"
+    choco install alacritty -y
+    Write-Host "Installed Alacritty"
+})
+
+$neovim.Add_Click({
+    Write-Host "Installing neovim"
+    choco install neovim -y
+    Write-Host "Installed neovim"
+})
+
+$atom.Add_Click({
+    Write-Host "Installing Atom"
+    choco install atom -y
+    Write-Host "Installed Atom"
+})
+
+$emacs.Add_Click({
+    Write-Host "Installing Emacs"
+    choco install emacs -y
+    Write-Host "Installed Emacs"
+})
+
+$github.Add_Click({
+    Write-Host "Installing Github Desktop"
+    choco install github-desktop -y
+    Write-Host "Installed Github Desktop"
+})
+
+$back.Add_Click({
+    [void]$Form1.Close()
+})
+
+###############################################################################
+
+$vbox.Add_Click({
+    Write-Host "Installing Virtualbox"
+    choco install virtualbox -y
+    Write-Host "Installed Virtualbox"
+})
+
+$vmware.Add_Click({
+    Write-Host "Installing VMWare Player"
+    choco install vmware-workstation-player -y
+    Write-Host "Installed VMWare Player"
+})
+
+$back1.Add_Click({
+    [void]$Form2.Close()
+})
+
+###############################################################################
+
+$gimp.Add_Click({
+    Write-Host "Installing Gimp"
+    choco install gimp -y
+    Write-Host "Installed Gimp"
+})
+
+$inkscape.Add_Click({
+    Write-Host "Installing Inkscape"
+    choco install inkscape -y
+    Write-Host "Installed Inkscape"
+})
+
+$vlc.Add_Click({
+    Write-Host "Installing VLC Media Player"
+    choco install vlc -y
+    Write-Host "Installed VLC Media Player"
+})
+
+$spotify.Add_Click({
+    Write-Host "Installing Spotify"
+    choco install spotify -y
+    Write-Host "Installed Spotify"
+})
+
+$back2.Add_Click({
+    [void]$Form3.Close()
+})
+
+###############################################################################
+
+$dolphin.Add_Click({
+    Write-Host "Installing Dolphin Emulator"
+    choco install dolphin -y
+    Write-Host "Installed Dolphin Emulator"
+})
+
+$pcsx2.Add_Click({
+    Write-Host "Installing PCSX2 PS2 Emulator"
+    choco install pcsx2 -y
+    Write-Host "Installed PCSX2 PS2 Emulator"
+})
+
+$retroarch.Add_Click({
+    Write-Host "Installing Retroarch"
+    choco install retroarch -y
+    Write-Host "Installed Retroarch"
+})
+
+$back3.Add_Click({
+    [void]$Form4.Close()
+})
+
+###############################################################################
+# Start program in main window
+###############################################################################
 
 [void]$Form.ShowDialog()
